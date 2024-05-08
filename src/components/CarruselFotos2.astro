@@ -1,0 +1,109 @@
+
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+          <div id="prevBtn" class="prev" onclick="prevSlide()">&#10094;</div>
+          <div class="slides"></div>
+          <div id="nextBtn" class="next" onclick="nextSlide()">&#10095;</div>
+        </div>
+    </div>
+    <script lang="javascript">
+        let currentIndex = 0;
+        
+        fetch('fotos.json')
+          .then(response => response.json())
+          .then(data => {
+            const slidesContainer = document.querySelector('.slides');
+            data.images.forEach(image => {
+              const slide = document.createElement('div');
+              slide.classList.add('slide');
+              slide.innerHTML = `<img src="fotos/${image.src}" alt="${image.alt}" class="responsive">`;
+              slidesContainer.appendChild(slide);
+            });
+          })
+          .catch(error => console.error('Error fetching images:', error));
+        
+        function showSlide(index) {
+          const slides = document.querySelectorAll('.slide');
+          slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+          });
+          currentIndex = index;
+        }
+        
+        function nextSlide() {
+          const totalSlides = document.querySelectorAll('.slide').length;
+          currentIndex = (currentIndex + 1) % totalSlides;
+          showSlide(currentIndex);
+        }
+        
+        function prevSlide() {
+          const totalSlides = document.querySelectorAll('.slide').length;
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          showSlide(currentIndex);
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+          showSlide(currentIndex);
+        });
+    </script>
+</body>
+  
+<style>
+.carousel-container {
+    margin: auto;
+    overflow: hidden;
+  }
+  
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.slides {
+    display: flex;
+    justify-content: center;
+}
+  
+.slide {
+    width: 100%;
+    height: auto;
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    z-index: 1000;
+    scale: 2;
+}
+  
+.prev {
+    left: 0;
+}
+  
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 1300px) {
+  .slides {
+    width: 75%; /* Cambia el ancho al 100% para dispositivos más pequeños */
+}
+}
+</style>
+  

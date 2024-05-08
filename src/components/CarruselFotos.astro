@@ -1,0 +1,64 @@
+---
+import fotos from '../../public/fotos.json';
+---
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            
+                <div class="swiper-slide">
+                    <img src="/public/fotos/lbm_chips.jpeg" alt="Foto" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/public/fotos/lbm_portada.png" alt="Foto" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/public/fotos/lbm_ruben.jpeg" alt="Foto" />
+                </div>
+            
+        </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-scrollbar"></div>
+</body>
+  
+<script>
+    import fotos from '../../public/fotos.json';
+    export default {
+      fotos
+    };
+    // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from "swiper/modules";
+  import "swiper/css/navigation";
+
+  // Configurar Swiper
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation], // definir los módulos a usar
+    loop: true,            // definir si los slides estarán en bucle
+    slidesPerView: 2,      // agregar número de slides para la pantalla
+    spaceBetween: 40,      // separación entre slides en px
+    navigation: {          // definir botones next y prev para el módulo Navigation
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    }
+  });
+</script>
+  
+<style>
+.swiper-slide {
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+  

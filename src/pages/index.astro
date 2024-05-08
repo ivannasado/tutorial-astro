@@ -2,8 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Página de inicio";
 import Greeting from '../components/Greeting';
+//import CarruselFotos2 from '../components/CarruselFotos2.astro';
 ---
 <BaseLayout pageTitle={pageTitle}>
+  <!-- <CarruselFotos2>
+  </CarruselFotos2> -->
   <h2>Mi impresionante subtítulo del blog</h2>
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
