@@ -2,42 +2,52 @@
     "images": [
       {
         "src": "lbm_chips.jpeg",
+        "class": "responsive lbm",
         "alt": "Chips de laboratorio"
       },
       {
         "src": "lbm_portada.jpg",
+        "class": "responsive lbm",
         "alt": "Laboratorio de biología molecular"
       },
       {
         "src": "lbm_ruben.jpeg",
+        "class": "responsive lbm",
         "alt": "Ruben"
       },
       {
         "src": "lbm_tere.jpeg",
+        "class": "responsive lbm",
         "alt": "Laboratoria Dra. Tere"
       },
       {
         "src": "lbm_3500xl2.jpg",
+        "class": "responsive lbm",
         "alt": "Laboratorio lbm"
       },
       {
         "src": "lbm_cultivos.jpg",
+        "class": "responsive lbm",
         "alt": "Cultivos de lbm"
       },
       {
         "src": "lbm_servicios.jpg",
+        "class": "responsive lbm",
         "alt": "Aparatos del LBM"
       },
       {
         "src": "lec_integrantes2.jpg",
+        "class": "responsive lbm",
         "alt": "Integrantes del lec"
       },
       {
         "src": "lmyp_portada2.jpg",
+        "class": "responsive lbm",
         "alt": "Laboratorio lmyp"
       },
       {
         "src": "lmyp_servicios.jpg",
+        "class": "responsive lbm",
         "alt": "Laboratorio lbm"
       }
     ]

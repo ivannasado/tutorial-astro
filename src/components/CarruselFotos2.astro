@@ -17,7 +17,7 @@
             data.images.forEach(image => {
               const slide = document.createElement('div');
               slide.classList.add('slide');
-              slide.innerHTML = `<img src="fotos/${image.src}" alt="${image.alt}" class="responsive">`;
+              slide.innerHTML = `<img src="fotos/${image.src}" alt="${image.alt}" class="${image.class}">`;
               slidesContainer.appendChild(slide);
             });
           })
@@ -46,6 +46,7 @@
         document.addEventListener('DOMContentLoaded', () => {
           showSlide(currentIndex);
         });
+
     </script>
 </body>
   
@@ -62,8 +63,14 @@
     height: 400px;
 }
 .responsive {
-  width: 100%;
+  width: 20%;
   height: auto;
+}
+
+img.lbm {
+  visibility: hidden;
+  height: 0%;
+  width: 0%;
 }
 
 .slides {
