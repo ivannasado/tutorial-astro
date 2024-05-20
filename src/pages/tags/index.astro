@@ -8,7 +8,7 @@ const pageTitle = "Índice de etiquetas";
 <BaseLayout pageTitle={pageTitle}>
     <div class="tags">
         {tags.map((tag) => (
-            <p transition:animate={slide({ duration: "1.5s"})}  class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+            <p transition:animate={slide({ duration: "1s"})}  class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
         ))}
     </div>
 </BaseLayout >
